@@ -11,8 +11,8 @@ if ($conn){
             $username = $_SESSION['username'];
             $coursename = $_SESSION['coursename'];
             $addedby = $_SESSION['added_by'];
-            
-            $query = "INSERT INTO course (coursename, added_by) VALUES ('$course', '$username') WHERE `coursename` = '$coursename' AND `added_by` = '$addedby'";
+            echo $coursename;
+            $query = "UPDATE  `course` SET `coursename` = '$course'  WHERE `coursename` = '$coursename' AND `added_by ` = $username ";
 
             $query_run = mysqli_query($conn,$query);
             if ($query_run){
